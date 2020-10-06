@@ -1,0 +1,55 @@
+<form #myform=ngForm (ngSubmit)="myform.valid &&  addUser(myform)">
+
+    
+    <div class="col-7" style="margin-top: 20px;">
+        <input type="text" name="username" placeholder="username"  ngModel #usernameCtrl=ngModel class="form-control" >    
+    </div>
+    
+    <div *ngIf="usernameCtrl.errors!=null && usernameCtrl.errors.required" class="error">
+        username is required
+    </div>
+    <div class="col-7" style="margin-top: 20px;">
+        <input type="text" name="password" placeholder="password"  ngModel #passwordCtrl=ngModel class="form-control" >    
+    </div>
+    
+    <div *ngIf="passwordCtrl.errors!=null && passwordCtrl.errors.required" class="error">
+        password is required
+    </div>
+    <div class="col-7" style="margin-top: 20px;">
+        <input type="number" name="phoneNo" placeholder="phoneNo"  ngModel #phoneNoCtrl=ngModel class="form-control" >    
+    </div>
+    
+    <div *ngIf="phoneNoCtrl.errors!=null && phoneNoCtrl.errors.required" class="error">
+        phoneNo is required
+    </div>
+    <div style="position:absolute;margin-left: 10px; margin-top: 10px;">
+        <input type="submit" value="Submit"  class="btn btn-primary">    
+    </div>
+    </form>
+    <br>
+        
+        <div class ="container" *ngIf="user!==undefined">
+         <h3>User Added </h3>   
+         <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">username</th>
+                <th scope="col">password</th>
+                <th scope="col">phoneNo</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row">{{user.username}}</td>
+                <td>{{user.password}}</td>
+                <td>{{user.phoneNo}}</td>
+                
+              </tr>
+              </tbody>
+              </table>
+        </div>
+
+    
+    
+    

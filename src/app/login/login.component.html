@@ -1,0 +1,28 @@
+<h3>Login details</h3>
+<form #myform=ngForm (ngSubmit)=findUser(myform) >
+    <div class="form-group">
+        <label>username</label>
+    <input type="text" name="username"   ngModel class="form-control">
+  </div>
+  <div class="form-group">
+    <label>password</label>
+    <input type="text" name="password"   ngModel class="form-control">
+  </div>
+  <input type="submit" value="Submit" class="btn btn-success">
+
+  
+  
+    
+</form>
+<br>
+  
+  <div *ngIf="user!==undefined">
+      username is {{user.username}}
+      password is {{user.password}}
+      phoneNo is {{user.phoneNo}}
+    
+    
+
+  <br>
+ 
+  </div>
